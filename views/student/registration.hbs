@@ -1,0 +1,88 @@
+<head>
+    <link rel="stylesheet" href="/css/student.css">
+</head>
+<h3>{{viewTitle}}</h3>
+<p style="color: red;">{{unique}}</p>
+{{#each error}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{this.msg}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/each}}
+<div class="container">
+    <div class="row">
+        <form action="/student/registration" method="POST" style="width: 100%;">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">First name</label>
+                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder=""
+                        value="{{userdata.firstName}}" required="" style="width: 100%;">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">Last name</label>
+                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder=""
+                        value="{{userdata.lastName}}" required="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" name="email" id="email" placeholder=""
+                        value="{{userdata.email}}" required="" style="width: 100%;">
+                </div>
+                <div class="col-md-6">
+                    <label for="confirmEmail">Confirm Email</label>
+                    <input type="text" class="form-control" name="confirmEmail" id="email" placeholder=""
+                        value="{{userdata.confirmEmail}}" required="" style="width: 100%;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="mobile">Mobile No</label>
+                    <input type="number" class="form-control" name="mobile" id="mobile" placeholder=""
+                        value="{{userdata.mobile}}" required="" style="width: 100%;">
+                </div>
+                <div class="col-md-6">
+                    <label for="gender">Gender</label>
+                    <select class="custom-select d-block w-100" id="gender" name="gender" required="">
+                        <option value="{{userdata.gender}}" hidden="hidden" selected="selected">{{userdata.gender}}
+                        </option>
+                        <option>Choose...</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" name="city" id="city" placeholder=""
+                        value="{{userdata.city}}" required="" style="width: 100%;">
+                </div>
+                <div class="col-md-6">
+                    <label for="exampleFormControlFile1">Profile picture</label>
+                    <input type="file" class="form-control-file" name="picture" id="exampleFormControlFile1"
+                        value="{{userdata.picture}}" required="true">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="" value=""
+                        required="" style="width: 100%;">
+                </div>
+                <div class="col-md-6">
+                    <label for="firstName">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
+                        placeholder="" value="" required="" style="width: 100%;">
+                </div>
+            </div>
+            <div class="form-group" style="padding-top: 10px;">
+                <button type="submit" class="btn btn-info" style="margin: auto;">Sign in</button>
+                <p style="display: inline;">Already registered <a class="" href="student/list">Login</a></p>
+            </div>
+        </form>
+    </div>
+</div>

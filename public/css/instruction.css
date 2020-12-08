@@ -1,0 +1,62 @@
+#box {
+    max-width: 100%;
+    padding: 0;
+}
+.navbar-light {
+    background-color: #e88c00;
+    border-color: #e88c00;
+}
+#navbarSupportedContent a {
+    color: white;
+}
+.site-info p, .site-info h3 {
+    color: white;
+    margin: 0;
+}
+.table-striped, .table-striped td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+.leftnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: #f1f1f1;
+    font-family: Calibri;
+    font-size: 16px;
+}
+ul li {
+
+    margin-bottom: 4px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.leftnavli a.active {
+    background-color: #008080;
+    color: white;
+}
+.leftnavli a {
+    display: block;
+    color: #000;
+    padding: 15px 16px;
+    text-decoration: none;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.BtnSubmit {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 8px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

@@ -1,0 +1,117 @@
+#box {
+    max-width: 100%;
+    padding: 0;
+}
+.navbar-light {
+    background-color: #e88c00;
+    border-color: #e88c00;
+}
+#navbarSupportedContent a {
+    color: white;
+}
+.site-info p, .site-info h3 {
+    color: white;
+    margin: 0;
+}
+.bannerBG {
+    padding: 15px 10px 10px 10px;
+    background: #e5e5e5;
+    padding: 30px 10px 10px 10px;
+    height: auto;
+}
+.bg-whiteBoxInr {
+    height: auto;
+    padding: 10px 15px;
+    background: #fff;
+    box-shadow: 0px 0px 5px 0px rgb(197, 196, 196);
+    border-top: 5px solid #f49915;
+}
+.bg-whiteBoxInr h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+.newsScrl-bg {
+    height: 140px; 
+    overflow-y: scroll;
+}
+.OrangeBOX ul {
+    margin: 0px;
+    padding: 0px;
+    height: 260px;
+}
+.OrangeBOX ul li {
+    list-style-type: none;
+    padding: 4px 0px 15px 0px;
+    border-bottom: 1px dashed #e8e8e8;
+}
+span.bannerButton {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+span.bannerButton a.btn-success {
+    background-color: #e88c00;
+    border: 1px solid #e88c00;
+}
+.cources-offered {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+.cource-headings {
+    margin-bottom: 50px;
+}
+
+
+
+.footer {
+    background-color: #3b3b3b;
+    padding: 30px 0px;
+    color: white;
+}
+.footer a {
+    color: white;
+}
+.footer ul.socialicons .icon-circle .ifacebook .fa {
+    color: #FFF;
+    border: 2px solid #FFF;
+}
+.footer ul.socialicons li {
+    float: left;
+    padding-right: 10px;
+    list-style-type: none;
+    text-align: center;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.footer ul.socialicons .icon-circle .ifacebook .fa {
+    color: #FFF;
+    border: 2px solid #FFF;
+}
+.footer ul.socialicons .icon-circle .fa {
+    height: 40px;
+    width: 40px;
+    line-height: 34px;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.socialicons {
+    padding: 0;
+    padding-right: 1px;
+    display: inline-block;
+}

@@ -1,0 +1,123 @@
+<head>
+    <link rel="stylesheet" href="/css/studentlogin.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/homepage"><img src="image/sams-logo.png" style="width: 160px;" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cources Offered</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+            </li>
+        </ul>
+        <div class="site-info">
+            <p>Higher Education Department</p>
+            <h3>Degree Colleges</h3>
+        </div>
+    </div>
+</nav>
+
+
+{{#each error}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{this.msg}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/each}}
+
+<div class="container login-window">
+    <div class="row">
+        <div style="width: auto;display:inline-flex; padding: 25px; border: 1px solid #ddd;">
+            <div class="col-lg-6">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <b>Admission Notice</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul class="fa-ul">
+                                    <li><i class="fa fa-file-pdf-o"></i><a href="doc/admission-process_2020.pdf"
+                                            target="_blank">&nbsp;ONLINE ADMISSION PROCESS FOR GENERAL AND SFS
+                                            COURSES
+                                        </a></li>
+                                    <li><i class="fa fa-file-pdf-o"></i><a href="doc/adv-1.pdf"
+                                            target="_blank">&nbsp;Admission Advertisement </a></li>
+                                    <li>&nbsp;Admission to all Courses Last Date of Admission Without Late Fee :
+                                        <b>31-Dec-2020</b> </li>
+                                    <li>&nbsp;With Late Fee Rs. 500/- : Date will be notified later </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-6">
+                <form action="/studentlogin" method="POST">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <img src="image/Login.png">
+                                <span style="font-size: 14pt; color: cornflowerblue;margin-left:1rem">
+                                    <strong>LOGIN TO ONLINE ADMISSION 2020&nbsp;</strong>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                Email:
+                            </td>
+                            <td>
+                                <input name="email" type="text" id="email" class="LoginUserTextBox"
+                                    autocomplete="off" required="This field is required" >
+                                    <p style="color: red;padding:0px;margin:0px;"><strong>{{emailError}}</strong></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                               Password
+                            </td>
+                            <td>
+                                <input name="password" type="password" id="UserPass" class="LoginPwdTextBox hasDatepicker"
+                                    autocomplete="off" required="This field is required">
+                                    <p style="color: red;padding:0px;margin:0px;"><strong>{{passError}}</strong></p>
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100" colspan="2" align="right">
+                                <a href="">
+                                    <input type="submit" name="LoginBtn" value="Login" id="LoginBtn"
+                                        class="btn btn-primary btn" style="width:31%;">
+                                </a>
+                                &nbsp; &nbsp;
+                                <a href="/newregistration">
+                                    <input type="submit" name="btnNew" value="New Student, Register" id="btnNew"
+                                        class="btn btn-success btn" style="width:40%;">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

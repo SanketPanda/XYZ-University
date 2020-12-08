@@ -1,0 +1,246 @@
+<head>
+    <link rel="stylesheet" href="/css/newregistartion.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/homepage"><img src="image/sams-logo.png" style="width: 160px;" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cources Offered</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+            </li>
+        </ul>
+        <div class="site-info">
+            <p>Higher Education Department</p>
+            <h3>Degree Colleges</h3>
+        </div>
+    </div>
+</nav>
+
+
+{{#each error}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{this.msg}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/each}}
+
+<div class="container registration-form">
+    <div class="row">
+        <div class="col-lg-12">
+            <table>
+                <tbody>
+                    <td align="center" colspan="3">
+                        <tr>
+                            <a href="/studentlogin">
+                                <input type="submit" name="btnBack" value="Existing Student, Login" id="btnBack"
+                                    class="btn btn-primary">
+                            </a>
+                        </tr>
+                    </td>
+                </tbody>
+            </table>
+            <form action="/newregistration" method="POST"></form>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td colspan="3" align="center" style="border-left: none;">
+                            <h3 style="color: #0066FF">NEW STUDENT REGISTRATION</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="left">'*' Marks fields are Mandatory
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><b>1.</b></strong>
+                        </td>
+                        <td width="30%">
+                            <strong>Course Aplied</strong><span style="color: #ff0000; font-size: 10pt;"><strong>
+                                    *</strong></span>
+                        </td>
+                        <td>
+
+                            <select name="courses" required="" id="ddlCourse1" tabindex="2" class="form-control"
+                                style="width:265px;" required="">
+                                <option value="{{userdata.courses}}" hidden="hidden" selected="selected">
+                                    {{userdata.courses}}
+                                <option value="[Select]">[Select]</option>
+                                <option value="MBA-Distance">MBA (Distance Mode)</option>
+                                <option value="MBA-Evening">MBA Evening (Regular Mode)</option>
+                                <option value="P.G. Dip. in Mgt.">PG Diploma in Management (Distance Mode)
+                                </option>
+                                <option value="P.G. Dip. in Banking &amp; Insurance Mgt.">PG Diploma in Banking
+                                    &
+                                    Insurance Management (Regular/Distance Mode)</option>
+                                <option value="MCA-Regular">MCA 3 Yr. (Regular Mode)</option>
+                                <option value="MCA-Lateral">LATERAL MCA (Regular Mode)</option>
+                                <option value="Msc-ComputerScience">M.Sc. Computer Science & Application
+                                    (Regular
+                                    Mode)
+                                </option>
+                                <option value="Msc-It">M.Sc. IT (Regular Mode)</option>
+                                <option value="Msc-ITM">M.Sc. IT & Management(Regular Mode)</option>
+                                <option value="MA-Economics">MA in Economics</option>
+                                <option value="MA-Odia">MA in Odia</option>
+                                <option value="MA-Sociology">MA in Sociology</option>
+                                <option value="MA-Education">MA in Education</option>
+                                <option value="MA-Political Science">MA in Political Science</option>
+
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>2.</b> </td>
+                        <td><strong>Applicant's Name</strong><span style="color: #ff0000; font-size: 10pt;">*
+                                <span id="RequiredFieldValidator1" style="color:Red;visibility:hidden;">Name
+                                    Required</span>
+                            </span></td>
+                        <td>
+                            <input name="applicantName" type="text" maxlength="50" id="txtstudentname" tabindex="1"
+                                required="" autocomplete="off" class="form-control" style="width:260px;"
+                                value="{{userdata.applicantName}}">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>3.</b>
+                        </td>
+                        <td>
+                            <strong>Date of Birth</strong> <span style="color: #ff0000; font-size: 10pt;">*</span>
+                            <span style="color: #ff0000; font-size: 10pt;">
+                                <span id="RequiredFieldValidator2" style="color:Red;visibility:hidden;">DOB
+                                    Required</span>
+                            </span>
+                        </td>
+                        <td>
+
+                            <input name="dob" type="date" id="txtdob" tabindex="3" autocomplete="off" required=""
+                                class="form-control hasDatepicker" style="width:200px;" value="{{userdata.dob}}">
+
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>4<b>.</b></strong>
+                        </td>
+                        <td>
+                            <strong>Email ID</strong><span style="color: #ff0000; font-size: 10pt;"> *</span>
+                            <span style="color: #ff0000; font-size: 10pt;">
+                                <span id="RequiredFieldValidator3" style="color:Red;visibility:hidden;">Email
+                                    Required</span>
+                            </span>
+                        </td>
+                        <td>
+
+                            <input name="email" type="text" id="txtEmail" tabindex="3" autocomplete="off" required=""
+                                class="form-control" style="width:200px;" value="{{userdata.email}}">
+                            <p style="color: red;">{{unique}}</p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><b>5.</b></strong>
+                        </td>
+                        <td colspan="2">All applicants must provide a valid Email Id (Gmail) and Mobile No. If
+                            you
+                            do
+                            not have an email id in Gmail, kindly open a Gmail id. It will take a few minutes to
+                            create.
+                            (Other E-mail Ids are not accepted) </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>6<b>.</b></strong>
+                        </td>
+                        <td>
+                            <strong>Password</strong><span style="color: #ff0000; font-size: 10pt;"> *</span>
+                            <span style="color: #ff0000; font-size: 10pt;">
+                                <span id="RequiredFieldValidator3" style="color:Red;visibility:hidden;">Password
+                                    Required</span>
+                            </span>
+                        </td>
+                        <td>
+
+                            <input name="password" type="password" id="txtEmail" tabindex="3" autocomplete="off"
+                                required="" class="form-control" style="width:200px;">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>7<b>.</b></strong>
+                        </td>
+                        <td>
+                            <strong>Confirm Password</strong><span style="color: #ff0000; font-size: 10pt;">
+                                *</span>
+                            <span style="color: #ff0000; font-size: 10pt;">
+                            </span>
+                        </td>
+                        <td>
+
+                            <input name="confirmpassword" type="password" id="txtEmail" tabindex="3" autocomplete="off"
+                                required="" class="form-control" style="width:200px;">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>8.</b>
+                        </td>
+                        <td>
+                            <strong>Mobile No</strong> <span style="color: #ff0000; font-size: 10pt;">*</span>
+                            <span style="color: #ff0000; font-size: 10pt;">
+                                <span id="RequiredFieldValidator4" style="color:Red;visibility:hidden;">Mobile
+                                    No
+                                    Required</span>
+                            </span>
+                        </td>
+                        <td>
+                            <input name="mobile" type="number" maxlength="10" id="txtMobileNo" tabindex="3" required=""
+                                autocomplete="off" class="form-control" style="width:200px;"
+                                value="{{userdata.mobile}}"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><strong>(Please do not prefix 0, +91)</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center" class="auto-style2">
+                            <input type="submit" name="btnSubmit" value="Register" id="btnSubmit" tabindex="73"
+                                required="" class="btn btn-success btn-lg">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="3">
+                            <span id="lblMsg" style="color:#CC0000;font-size:11pt;font-weight:bold;"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </form>
+        </div>
+    </div>
+</div>

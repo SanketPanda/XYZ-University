@@ -1,0 +1,19 @@
+#box {
+    background-color: #fff;
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+    -webkit-box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.75);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radious: 10px 10px 10px 10px;
+    -webkit-border-radious: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+}
+
+#background {
+    background-color:#17a2b8!important;
+    padding: 90px;
+}

@@ -1,0 +1,199 @@
+<head>
+    <link rel="stylesheet" href="/css/instruction.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/homepage"><img src="image/sams-logo.png" style="width: 160px;" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cources Offered</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+            </li>
+        </ul>
+        <div class="site-info">
+            <p>Higher Education Department</p>
+            <h3>Degree Colleges</h3>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid" style="padding-left: 0px;padding-top:1rem">
+    <div class="row">
+        <div>
+            <div class="col">
+                <table style="width: 100%; border:0" class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td rowspan="3" valign="top">
+                                <ul class="leftnav">
+                                    <li>
+                                        <center>
+                                            <img src="image/Laptop.png" alt="" height="80px" width="80px">
+                                        </center>
+                                    </li>
+                                    <li>
+                                        <center>
+                                            <span style="font-size:19px;">
+                                                <b>
+                                                    <span>
+                                                        Name of Applicant
+                                                    </span>
+                                                    <br>
+                                                    <span>
+                                                        Form No
+                                                    </span>
+                                                </b>
+                                            </span>
+                                        </center>
+                                    </li>
+                                    <li class="leftnavli">
+                                        <a class="active" href="/std_home.aspx">
+                                            <i class="fa fa-dashboard" style="font-size:25px;"></i>
+                                            &nbsp;&nbsp;&nbsp;Dashboard
+                                        </a>
+                                    </li>
+                                    <li class="leftnavli">
+                                        <a href="/instructions.aspx">
+                                            <i class="fa fa-tasks" style="font-size:25px;"></i>
+                                            &nbsp;&nbsp;&nbsp; Application Form
+                                        </a>
+                                    </li>
+                                    <li class="leftnavli">
+                                        <a href="/instructions.aspx">
+                                            <i class="fas fa-image" style="font-size:25px;"></i>
+                                            &nbsp;&nbsp;&nbsp; Upload Photo & Signature
+                                        </a>
+                                    </li>
+                                    <li class="leftnavli">
+                                        <a href="/instructions.aspx">
+                                            <i class="fa fa-file-pdf" style="font-size:25px;"></i>
+                                            &nbsp;&nbsp;&nbsp; Upload Documents
+                                        </a>
+                                    </li>
+                                    <li class="leftnavli">
+                                        <a href="/instructions.aspx">
+                                            <i class="fa fa-newspaper" style="font-size:25px;"></i>
+                                            &nbsp;&nbsp;&nbsp; Print Form
+                                        </a>
+                                    </li>
+                                    <li class="leftnavli">
+                                        <a href="/instructions.aspx">
+                                            <i class="fa fa-power-off" style="font-size:25px;"></i>
+                                            &nbsp;&nbsp;&nbsp; Log out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col" style="margin:auto;">
+            <h3 style="text-align: center;">Pre Approval Student Details</h3>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="col">SLNO.</th>
+                        <th scope="col">Form No</th>
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Sign</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Print</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            1
+                        </td>
+                        <td>2007879</td>
+                        <td>SANKET KUMAR PANDA</td>
+                        <td>
+                            <img id="ctl00_ContentPlaceHolder1_Grd_ctl02_Image1"
+                                src="../../../ImageHandler.ashx?ImID=2007879" style="height:40px;border-width:0px;">
+                        </td>
+                        <td>
+                            <img id="ctl00_ContentPlaceHolder1_Grd_ctl02_Image2"
+                                src="../../../signHandler.ashx?ImID=2007879"
+                                style="height:40px;width:120px;border-width:0px;">
+                        </td>
+                        <td> MCA 2 Year</td>
+                        <td>
+                            <input type="image" name="ctl00$ContentPlaceHolder1$Grd$ctl02$btnPrint"
+                                id="ctl00_ContentPlaceHolder1_Grd_ctl02_btnPrint" src="../../../bullets/print-form.png"
+                                onclick="aspnetForm.target ='_blank';" style="border-width:0px;">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div align="left" style="width: 25rem">
+                <h3>Uploaded Document Details</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                1.
+                                <b>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <a href="../../../Files/2007879/2007879_10th_ms.pdf" target="_blank"> 10th Certificate</a>
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                2.
+                                <b>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <a href="../../../Files/2007879/2007879_10th_ms.pdf" target="_blank"> +2 Certificate</a>
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                3.
+                                <b>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <a href="../../../Files/2007879/2007879_10th_ms.pdf" target="_blank"> Graduation Certificate</a>
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                4.
+                                <b>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <a href="../../../Files/2007879/2007879_10th_ms.pdf" target="_blank"> Migration</a>
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                4.
+                                <b>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <a href="../../../Files/2007879/2007879_10th_ms.pdf" target="_blank"> Identity Proof</a>
+                                </b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+#box {
+    max-width: 100%;
+    padding: 0;
+}
+.navbar-light {
+    background-color: #e88c00;
+    border-color: #e88c00;
+}
+#navbarSupportedContent a {
+    color: white;
+}
+.site-info p, .site-info h3 {
+    color: white;
+    margin: 0;
+}
+.table-striped, .table-striped td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+.login-window {
+    margin-top: 50px;
+}
