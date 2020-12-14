@@ -5,7 +5,7 @@
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/homepage"><img src="image/sams-logo.png" style="width: 160px;" alt=""></a>
+    <a class="navbar-brand" href="/homepage"><img src="/image/XYZUniversity.png" style="width: 160px;" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,7 +42,7 @@
                                 <ul class="leftnav">
                                     <li>
                                         <center>
-                                            <img src="image/Laptop.png" alt="" height="80px" width="80px">
+                                            <img src="../uploads/{{userData.profilepicture}}" alt="" height="80px" width="80px" alt="profile picture">
                                         </center>
                                     </li>
                                     <li>
@@ -61,37 +61,31 @@
                                         </center>
                                     </li>
                                     <li class="leftnavli">
-                                        <a class="active" href="/std_home.aspx">
+                                        <a class="active" href="/student/instruction">
                                             <i class="fa fa-dashboard" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp;Dashboard
                                         </a>
                                     </li>
                                     <li class="leftnavli">
-                                        <a href="/instructions.aspx">
-                                            <i class="fa fa-tasks" style="font-size:25px;"></i>
-                                            &nbsp;&nbsp;&nbsp; Application Form
-                                        </a>
-                                    </li>
-                                    <li class="leftnavli">
-                                        <a href="/instructions.aspx">
+                                        <a href="/student/upload_photo">
                                             <i class="fas fa-image" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp; Upload Photo & Signature
                                         </a>
                                     </li>
                                     <li class="leftnavli">
-                                        <a href="/instructions.aspx">
+                                        <a href="/student/upload_doc">
                                             <i class="fa fa-file-pdf" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp; Upload Documents
                                         </a>
                                     </li>
                                     <li class="leftnavli">
-                                        <a href="/instructions.aspx">
+                                        <a href="/student/show_Print_Form">
                                             <i class="fa fa-newspaper" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp; Print Form
                                         </a>
                                     </li>
                                     <li class="leftnavli">
-                                        <a href="/instructions.aspx">
+                                        <a href="student/logout">
                                             <i class="fa fa-power-off" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp; Log out
                                         </a>
@@ -104,120 +98,96 @@
             </div>
         </div>
         <div class="col" style="margin:auto;">
-            <table class="table table-striped">
-                <tbody>
-                    <tr>
-                        <td colspan="4" bgcolor="#E5E5E5" style="text-align: center">
-                            <b>
-                                <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                                UPLOAD MARKSHEET & CERTIFICATE IN PDF FORMAT
-                                (* Marked are mandatory)
-                            </b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-size: 10pt; font-family: Arial">Upload 10th Certificate : * </span>
-                        </td>
-                        <td align="left">
-                            <input type="file" name="ctl00$ContentPlaceHolder1$FileUpload1"
-                                id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit"
-                                value="Upload 10th Certificate" id="ctl00_ContentPlaceHolder1_btnSubmit"
-                                class="btn-success" style="width:230px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit" value="View"
-                                id="ctl00_ContentPlaceHolder1_btnSubmit" class="btn btn-info">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-size: 10pt; font-family: Arial">Upload +2/Other Certificate : * </span>
-                        </td>
-                        <td align="left">
-                            <input type="file" name="ctl00$ContentPlaceHolder1$FileUpload1"
-                                id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit"
-                                value="Upload +2 Certificate" id="ctl00_ContentPlaceHolder1_btnSubmit"
-                                class="btn-success" style="width:230px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit" value="View"
-                                id="ctl00_ContentPlaceHolder1_btnSubmit" class="btn btn-info">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-size: 10pt; font-family: Arial">Upload Graduation/Other Certificate : *
-                            </span>
-                        </td>
-                        <td align="left">
-                            <input type="file" name="ctl00$ContentPlaceHolder1$FileUpload1"
-                                id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit"
-                                value="Upload Graduation Certificate" id="ctl00_ContentPlaceHolder1_btnSubmit"
-                                class="btn-success" style="width:230px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit" value="View"
-                                id="ctl00_ContentPlaceHolder1_btnSubmit" class="btn btn-info">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-size: 10pt; font-family: Arial">Upload Migration : </span>
-                        </td>
-                        <td align="left">
-                            <input type="file" name="ctl00$ContentPlaceHolder1$FileUpload1"
-                                id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit" value="Upload Migration"
-                                id="ctl00_ContentPlaceHolder1_btnSubmit" class="btn-success" style="width:230px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit" value="View"
-                                id="ctl00_ContentPlaceHolder1_btnSubmit" class="btn btn-info">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-size: 10pt; font-family: Arial">Upload Aadhaar : * </span>
-                        </td>
-                        <td align="left">
-                            <input type="file" name="ctl00$ContentPlaceHolder1$FileUpload1"
-                                id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit"
-                                value="Upload Aadhaar" id="ctl00_ContentPlaceHolder1_btnSubmit"
-                                class="btn-success" style="width:230px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit" value="View"
-                                id="ctl00_ContentPlaceHolder1_btnSubmit" class="btn btn-info">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" class="text-left">
-                            <span style="font-size: 9pt; font-family: Arial"><strong><em>Note: You can upload a PDF
-                                        file.
-                                        File size is not more than 1 MB</em></strong></span></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" align="center">
-                            <p><strong>A student has to read the following and has to give his/her acceptance by
-                                    submitting the same before </strong>f<span class="auto-style4">inal submit.</span>
-                            </p>
-                            <textarea name="ctl00$ContentPlaceHolder1$txtdecr" rows="2" cols="20" readonly="readonly"
-                                id="ctl00_ContentPlaceHolder1_txtdecr" style="height:100px;width:90%;">A student has to read the following and has to give his/her acceptance by submitting the same before depositing of the fees
+            <form action="/student/upload_doc" method="POST" enctype="multipart/form-data">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#E5E5E5" style="text-align: center">
+                                <b>
+                                    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                    UPLOAD MARKSHEET & CERTIFICATE IN PDF FORMAT
+                                    (* Marked are mandatory)
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt; font-family: Arial">Upload 10th Certificate : * </span>
+                            </td>
+                            <td align="left">
+                                <input type="file" name="tenthCertificate"
+                                    id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
+                            </td> 
+                            <td>
+                               <img src="../uploads/{{userData.tenthCertificate}}" height="80px" width="80px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt; font-family: Arial">Upload +2/Other Certificate : *
+                                </span>
+                            </td>
+                            <td align="left">
+                                <input type="file" name="twelfthCertificate"
+                                    id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
+                            </td>
+                            <td>
+                                   <img src="../uploads/{{userData.twelfthCertificate}}" height="80px" width="80px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt; font-family: Arial">Upload Graduation/Other Certificate :
+                                    *
+                                </span>
+                            </td>
+                            <td align="left">
+                                <input type="file" name="graduationCertificate"
+                                    id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
+                            </td>  
+                            <td>
+                                  <img src="../uploads/{{userData.graduationCertificate}}" height="80px" width="80px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt; font-family: Arial">Upload Migration : </span>
+                            </td>
+                            <td align="left">
+                                <input type="file" name="migration"
+                                    id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
+                            </td>
+                            <td>
+                                   <img src="../uploads/{{userData.migration}}" height="80px" width="80px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt; font-family: Arial">Upload Aadhaar : * </span>
+                            </td>
+                            <td align="left">
+                                <input type="file" name="adharCard"
+                                    id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
+                            </td>
+                            <td>
+                                 <img src="../uploads/{{userData.adharCard}}" height="80px" width="80px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="text-left">
+                                <span style="font-size: 9pt; font-family: Arial"><strong><em>Note: You can upload a PDF
+                                            file.
+                                            File size is not more than 1 MB</em></strong></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" align="center">
+                                <p><strong>A student has to read the following and has to give his/her acceptance by
+                                        submitting the same before </strong>f<span class="auto-style4">inal
+                                        submit.</span>
+                                </p>
+                                <textarea name="ctl00$ContentPlaceHolder1$txtdecr" rows="2" cols="20"
+                                    readonly="readonly" id="ctl00_ContentPlaceHolder1_txtdecr"
+                                    style="height:100px;width:90%;">A student has to read the following and has to give his/her acceptance by submitting the same before depositing of the fees
 
                                     GENERAL EXAMINATION SYSTEM
 
@@ -301,25 +271,27 @@
                                                                 Declaration: The particulars furnished by me in this application form are true.  I hereby agreed to abide by all rules  and regulations, Acts and statutes of the Utkal University and DDCE and to submit myself to such disciplinary action as shall be deemed fit by the Director in case of my failure to abide by such rules and regulations.  I undertake that dispute if any is subject to jurisdiction of SDJM, Bhubaneswar and also state that my relation with DDCE , Utkal University is not a consumer and service provider.  This form has been filled and submitted by me , I am submitting the form after reading all the points carefully and by understanding  the same. 
                                     </textarea>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" align="center">
-                            <input id="ctl00_ContentPlaceHolder1_CheckBox1" type="checkbox"
-                                name="ctl00$ContentPlaceHolder1$CheckBox1"><label
-                                for="ctl00_ContentPlaceHolder1_CheckBox1">I have read the above, understood the content
-                                and I agree</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" align="center">
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit"
-                                value="Final Submit &amp; Print Form" id="ctl00_ContentPlaceHolder1_btnSubmit"
-                                disabled="disabled" class="BtnSubmit">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" align="center">
+                                <input id="ctl00_ContentPlaceHolder1_CheckBox1" type="checkbox"
+                                    name="ctl00$ContentPlaceHolder1$CheckBox1"><label
+                                    for="ctl00_ContentPlaceHolder1_CheckBox1">I have read the above, understood the
+                                    content
+                                    and I agree</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" align="center">
+                                <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit"
+                                    value="Final Submit &amp; Print Form" id="ctl00_ContentPlaceHolder1_btnSubmit"
+                                     class="BtnSubmit">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
         </div>
     </div>
 </div>

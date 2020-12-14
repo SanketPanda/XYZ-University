@@ -14,3 +14,4 @@ err => {
 require('./student.model');
 require('./student.registration');
 require('./newregistration.model');
+require('./studentform.model');

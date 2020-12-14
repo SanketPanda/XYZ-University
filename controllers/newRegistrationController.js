@@ -10,9 +10,13 @@ var urlEncodedParser = bodyParser.urlencoded({ extended: false });
 const { body, validationResult } = require('express-validator');
 
 router.get('/', (req, res) => {
-    res.render('newregistration', {
-        viewTitle: "Home Page"
-    });
+    if (!req.session.isAuth) {
+        res.render('newregistration', {
+            viewTitle: "Home Page"
+        });
+    }else {
+        res.redirect('student/instruction');
+    }
 });
 
 router.post('/', urlEncodedParser, [
@@ -26,9 +30,8 @@ router.post('/', urlEncodedParser, [
         let maxYear = year - 20;
         let minYear = year - 32;
         let applicantsDOY = req.body.dob.split('-')[0];
-        console.log(applicantsDOY+"  "+maxYear+"  "+minYear);
-        if(applicantsDOY >= minYear && applicantsDOY <= maxYear)
-        {
+        console.log(applicantsDOY + "  " + maxYear + "  " + minYear);
+        if (applicantsDOY >= minYear && applicantsDOY <= maxYear) {
             console.log(applicantsDOY);
         } else {
             throw new Error('Applicants birth year must be between 1988 and 2000');
@@ -68,10 +71,10 @@ router.post('/', urlEncodedParser, [
     })
 
 ], (req, res) => {
+    
     let errors = validationResult(req);
     let test = errors.array();
     let userData = req.body;
-
     if (!errors.isEmpty()) {
         res.render('newregistration', {
             error: test,

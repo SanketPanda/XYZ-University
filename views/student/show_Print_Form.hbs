@@ -5,7 +5,7 @@
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/homepage"><img src="image/sams-logo.png" style="width: 160px;" alt=""></a>
+    <a class="navbar-brand" href="/homepage"><img src="/image/XYZUniversity.png" style="width: 160px;" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,7 +42,8 @@
                                 <ul class="leftnav">
                                     <li>
                                         <center>
-                                            <img src="image/Laptop.png" alt="" height="80px" width="80px">
+                                            <img src="../uploads/{{userData.profilepicture}}" alt="" height="80px"
+                                                width="80px">
                                         </center>
                                     </li>
                                     <li>
@@ -61,37 +62,31 @@
                                         </center>
                                     </li>
                                     <li class="leftnavli">
-                                        <a class="active" href="/std_home.aspx">
+                                        <a class="active" href="/student/instruction">
                                             <i class="fa fa-dashboard" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp;Dashboard
                                         </a>
                                     </li>
                                     <li class="leftnavli">
-                                        <a href="/instructions.aspx">
-                                            <i class="fa fa-tasks" style="font-size:25px;"></i>
-                                            &nbsp;&nbsp;&nbsp; Application Form
-                                        </a>
-                                    </li>
-                                    <li class="leftnavli">
-                                        <a href="/instructions.aspx">
+                                        <a href="/student/upload_photo">
                                             <i class="fas fa-image" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp; Upload Photo & Signature
                                         </a>
                                     </li>
                                     <li class="leftnavli">
-                                        <a href="/instructions.aspx">
+                                        <a href="/student/upload_doc">
                                             <i class="fa fa-file-pdf" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp; Upload Documents
                                         </a>
                                     </li>
                                     <li class="leftnavli">
-                                        <a href="/instructions.aspx">
+                                        <a href="/student/show_Print_Form">
                                             <i class="fa fa-newspaper" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp; Print Form
                                         </a>
                                     </li>
                                     <li class="leftnavli">
-                                        <a href="/instructions.aspx">
+                                        <a href="student/logout">
                                             <i class="fa fa-power-off" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp; Log out
                                         </a>
@@ -104,72 +99,98 @@
             </div>
         </div>
         <div class="col" style="margin:auto;">
+            <h3 style="text-align: center;">Pre Approval Student Details</h3>
             <table class="table table-striped">
                 <tbody>
                     <tr>
-                        <td colspan="4" bgcolor="#E5E5E5" style="text-align: center">
-                            <b>
-                                <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                                UPLOAD PHOTO & SIGNATURE
-                            </b>
-                        </td>
+                        <th scope="col">SLNO.</th>
+                        <th scope="col">Form No</th>
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Sign</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Print</th>
                     </tr>
                     <tr>
                         <td>
-                            <span style="font-size: 10pt; font-family: Arial">Upload Photo : </span>
+                            1
                         </td>
-                        <td align="left">
-                            <input type="file" name="ctl00$ContentPlaceHolder1$FileUpload1"
-                                id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
+                        <td>2007879</td>
+                        <td>SANKET KUMAR PANDA</td>
+                        <td>
+                            <img src="../uploads/{{userData.profilepicture}}" style="height:40px;border-width:0px;">
                         </td>
                         <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit" value="Update Photo"
-                                id="ctl00_ContentPlaceHolder1_btnSubmit" class="btn-success"
-                                style="width:150px;">
+                            <img src="../uploads/{{userData.signature}}"
+                                style="height:40px;width:120px;border-width:0px;">
                         </td>
+                        <td> MCA 2 Year</td>
                         <td>
-                            <img src="/ImageHandler.ashx?ImID=2007879" height="80px" width="80px">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-size: 10pt; font-family: Arial">Upload Signature : </span>
-                        </td>
-                        <td align="left">
-                            <input type="file" name="ctl00$ContentPlaceHolder1$FileUpload1"
-                                id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
-                        </td>
-                        <td>
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmit" value="Update Sign."
-                                id="ctl00_ContentPlaceHolder1_btnSubmit" class="btn-success"
-                                style="width:150px;">
-                        </td>
-                        <td>
-                            <img src="/ImageHandler.ashx?ImID=2007879" height="80px" width="80px">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">
-                            <span style="font-size: 9pt; font-family: Arial">upload your Passport Size Photograph with
-                                clear visibility of face and clear background (Max Size: 100 KB) &amp;
-                                <br>
-                                Signature with clear visibility (Max Size: 50 KB) in .jpg format only
-                                <br>
-                                Note: The Photo &amp; Signature you specify here will be used for all academic
-                                purpose.</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" align="center">
+                            <input type="image" name="ctl00$ContentPlaceHolder1$Grd$ctl02$btnPrint"
+                                id="ctl00_ContentPlaceHolder1_Grd_ctl02_btnPrint" src="../../../bullets/print-form.png"
+                                onclick="aspnetForm.target ='_blank';" style="border-width:0px;">
 
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnContinue"
-                                value="Submit &amp; Continue >>" id="ctl00_ContentPlaceHolder1_btnContinue"
-                                 class="BtnSubmit" style="width:250px;">
                         </td>
-                        <td>&nbsp;</td>
                     </tr>
                 </tbody>
             </table>
+
+            <div align="left" style="width: 25rem">
+                <h3>Uploaded Document Details</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                1.
+                                <b>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <a href="../uploads/{{userData.tenthCertificate}}" target="_blank"> 10th
+                                        Certificate</a>
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                2.
+                                <b>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <a href="../uploads/{{userData.twelfthCertificate}}" target="_blank"> +2
+                                        Certificate</a>
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                3.
+                                <b>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <a href="../uploads/{{userData.graduationCertificate}}" target="_blank"> Graduation
+                                        Certificate</a>
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                4.
+                                <b>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <a href="../uploads/{{userData.migration}}" target="_blank"> Migration</a>
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                4.
+                                <b>
+                                    <i class="fa fa-file-pdf"></i>
+                                    <a href="../uploads/{{userData.adharCard}}" target="_blank"> Identity
+                                        Proof</a>
+                                </b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
