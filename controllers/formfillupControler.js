@@ -28,7 +28,7 @@ router.get('/instruction', (req, res) => {
             viewTitle: "Home Page"
         });
     } else {
-        res.redirect('/homePage');
+        res.redirect('/');
     }
 });
 
@@ -41,12 +41,14 @@ router.get('/upload_photo', async (req, res) => {
                 res.render('student/upload_photo', {
                     userData: applicationForm
                 });
+            } else {
+                res.render('student/upload_photo');
             }
         } catch (e) {
             res.render('student/upload_photo');
         }
     } else {
-        res.redirect('/homePage');
+        res.redirect('/');
     }
 });
 
@@ -62,7 +64,7 @@ router.post('/upload_photo', cpUpload, async (req, res) => {
             applicationForm.profilepicture = req.files['profilepicture'][0].filename;
             applicationForm.signature = req.files['signature'][0].filename;
             await applicationForm.save();
-            var user = await User.findOne({ email: applicationForm.user }).exec();
+            var user = await User.findOne({ email: req.session.currentUser }).exec();
             user.applicationform = applicationForm.id;
             await user.save();
             res.render('student/upload_doc', {
@@ -73,14 +75,15 @@ router.post('/upload_photo', cpUpload, async (req, res) => {
                 profilepicture: req.files['profilepicture'][0].filename,
                 signature: req.files['signature'][0].filename,
             });
+            var user = await User.findOne({ email: req.session.currentUser }).exec();
             applicationForm.user = user.email;
             await applicationForm.save();
-            var user = await User.findOne({ email: currentUser }).exec();
             user.applicationform = applicationForm.id;
             await user.save();
             res.render('student/upload_doc', {
                 userData: applicationForm
             });
+           
         }
     } catch (e) {
         res.send(e);
@@ -96,12 +99,14 @@ router.get('/upload_doc', async (req, res) => {
                 res.render('student/upload_doc', {
                     userData: applicationForm
                 });
+            } else {
+                res.render('student/upload_doc');
             }
         } catch (e) {
             res.render('student/upload_doc');
         }
     } else {
-        res.redirect('/homePage');
+        res.redirect('/');
     }
 });
 
@@ -153,12 +158,14 @@ router.get('/show_Print_Form', async (req, res) => {
                 res.render('student/show_Print_Form', {
                     userData: applicationForm
                 });
+            } else {
+                res.render('student/show_Print_Form');
             }
         } catch (e) {
             res.render('student/show_Print_Form');
         }
     } else {
-        res.redirect('/homePage');
+        res.redirect('/');
     }
 });
 
@@ -169,7 +176,7 @@ router.get('/student/logout', (req, res) => {
             res.redirect("/studentlogin");
         });
     } else {
-        res.redirect('/homePage');
+        res.redirect('/');
     }
 });
 

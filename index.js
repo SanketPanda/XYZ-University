@@ -30,7 +30,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
 const store = new MongoDBSession({
-    uri: 'mongodb://localhost:27017/StudentDB',
+    uri: 'mongodb+srv://Sanket_Panda:Sanket1234@cluster0.71exn.mongodb.net/StudentDB?retryWrites=true&w=majority',
     session: 'userSessions'
 });
 
