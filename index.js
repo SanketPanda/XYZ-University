@@ -10,8 +10,6 @@ const MongoDBSession = require('connect-mongodb-session')(session);
 
 const { body, validationResult } = require('express-validator');
 
-const isAuth = require("./controllers/is-auth");
-
 //const studentController = require('./controllers/studentController');
 
 const homePageController = require('./controllers/homePageController');

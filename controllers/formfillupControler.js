@@ -4,11 +4,9 @@ const mongoose = require('mongoose');
 const userApplication = mongoose.model('Application_Form');
 const User = mongoose.model('NewStudent');
 const loginController = require('./studentLoginController');
-const auth = require('./is-auth');
 const multer = require('multer');
 const { compareSync } = require('bcrypt');
-const path = require('path');
-const e = require('express');
+const path = require('path')
 var router = express.Router();
 
 var Storage = multer.diskStorage({
