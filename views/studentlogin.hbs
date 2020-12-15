@@ -3,7 +3,7 @@
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/homepage"><img src="image/XYZUniversity.png" style="width: 160px;" alt=""></a>
+    <a class="navbar-brand" href="/"><img src="image/XYZUniversity.png" style="width: 160px;" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -12,13 +12,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Cources Offered</a>
+                <a class="nav-link" href="/postgraduation">Cources Offered</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+                <a class="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">Contact Us</a>
             </li>
         </ul>
         <div class="site-info">
@@ -52,14 +52,15 @@
                         <tr>
                             <td>
                                 <ul class="fa-ul">
-                                    <li><i class="fa fa-file-pdf-o"></i><a href="doc/admission-process_2020.pdf"
+                                    <li><i class="fa fa-file-pdf-o"></i><a href="/studentlogin"
                                             target="_blank">&nbsp;ONLINE ADMISSION PROCESS FOR GENERAL AND SFS
                                             COURSES
                                         </a></li>
-                                    <li><i class="fa fa-file-pdf-o"></i><a href="doc/adv-1.pdf"
+                                    <li><i class="fa fa-file-pdf-o"></i><a href="/studentlogin"
                                             target="_blank">&nbsp;Admission Advertisement </a></li>
                                     <li>&nbsp;Admission to all Courses Last Date of Admission Without Late Fee :
-                                        <b>31-Dec-2020</b> </li>
+                                        <b>31-Dec-2020</b>
+                                    </li>
                                     <li>&nbsp;With Late Fee Rs. 500/- : Date will be notified later </li>
                                 </ul>
                             </td>
@@ -69,54 +70,57 @@
             </div>
             <div class="col-lg-6">
                 <form action="/studentlogin" method="POST">
-                <table class="table table-striped">
-                    <tbody>
-                        <tr>
-                            <td colspan="2">
-                                <img src="image/Login.png">
-                                <span style="font-size: 14pt; color: cornflowerblue;margin-left:1rem">
-                                    <strong>LOGIN TO ONLINE ADMISSION 2020&nbsp;</strong>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left">
-                                Email:
-                            </td>
-                            <td>
-                                <input name="email" type="text" id="email" class="LoginUserTextBox"
-                                    autocomplete="off" required="This field is required" >
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <img src="image/Login.png">
+                                    <span style="font-size: 14pt; color: cornflowerblue;margin-left:1rem">
+                                        <strong>LOGIN TO ONLINE ADMISSION 2020&nbsp;</strong>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    Email:
+                                </td>
+                                <td>
+                                    <input name="email" type="text" id="email" class="LoginUserTextBox"
+                                        autocomplete="off" required="This field is required">
                                     <p style="color: red;padding:0px;margin:0px;"><strong>{{emailError}}</strong></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left">
-                               Password
-                            </td>
-                            <td>
-                                <input name="password" type="password" id="UserPass" class="LoginPwdTextBox hasDatepicker"
-                                    autocomplete="off" required="This field is required">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    Password
+                                </td>
+                                <td>
+                                    <input name="password" type="password" id="UserPass"
+                                        class="LoginPwdTextBox hasDatepicker" autocomplete="off"
+                                        required="This field is required">
                                     <p style="color: red;padding:0px;margin:0px;"><strong>{{passError}}</strong></p>
 
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="100" colspan="2" align="right">
-                                <a href="">
-                                    <input type="submit" name="LoginBtn" value="Login" id="LoginBtn"
-                                        class="btn btn-primary btn" style="width:31%;">
-                                </a>
-                                &nbsp; &nbsp;
-                                <a href="/newregistration">
-                                    <input type="submit" name="btnNew" value="New Student, Register" id="btnNew"
-                                        class="btn btn-success btn" style="width:40%;">
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" colspan="2" align="right">
+                                    &nbsp; &nbsp;
+                                    <a href="">
+                                        <input type="submit" name="LoginBtn" value="Login" id="LoginBtn"
+                                            class="btn btn-primary btn" style="width:31%;">
+                                    </a>
+
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </form>
+                <a href="/newregistration">
+                    <input type="submit" name="LoginBtn" value="New Student, Register" id="LoginBtn" class="btn btn-success btn"
+                        style="width:40%;">
+                </a>
             </div>
         </div>
     </div>

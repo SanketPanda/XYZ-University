@@ -152,9 +152,11 @@ router.get('/show_Print_Form', async (req, res) => {
     if (req.session.isAuth) {
         try {
             const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
+            const user = await User.findOne({ email: req.session.currentUser }).exec();
             if (applicationForm) {
                 res.render('student/show_Print_Form', {
-                    userData: applicationForm
+                    userData: applicationForm,
+                    user:user
                 });
             } else {
                 res.render('student/show_Print_Form');
