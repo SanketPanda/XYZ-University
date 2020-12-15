@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "postinstall": "npm install --dev"
+    "postinstall": "npm install"
   },
   "author": "Sanket Panda",
   "license": "ISC",
