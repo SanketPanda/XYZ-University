@@ -41,7 +41,7 @@ router.get('/upload_photo', async (req, res) => {
                 res.render('student/upload_photo', {
                     userData: applicationForm
                 });
-            } else {
+            } else if (applicationForm === null) {
                 res.render('student/upload_photo');
             }
         } catch (e) {
