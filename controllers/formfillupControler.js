@@ -85,10 +85,6 @@ router.post('/upload_photo', cpUpload, async (req, res) => {
     } catch (e) {
         res.send(e);
     }
-
-
-
-
 });
 
 
