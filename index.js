@@ -25,7 +25,7 @@ const studentLoginController = require('./controllers/studentLoginController');
 const formfillupController = require('./controllers/formfillupControler');
 
 const app = express();
-
+app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
@@ -56,7 +56,7 @@ app.engine('hbs', exphbs({
     layoutsDir: __dirname + '/views/layouts/'
 }));
 app.set('view engine', 'hbs');
-app.use(express.static(path.join(__dirname, '/public')));
+
 app.get('/', (req, res) => {
     res.send(
         `<h2>Welcome to student database</h2>
