@@ -21,17 +21,6 @@ var upload = multer({
     storage: Storage
 });
 
-// var storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, './public/uploads/')
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, file.fieldname + '-' + Date.now())
-//     }
-//   })
-
-//   var upload = multer({ storage: storage })
-
 
 router.get('/instruction',async (req, res) => {
     if (req.session.isAuth) {

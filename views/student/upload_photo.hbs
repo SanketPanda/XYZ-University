@@ -43,7 +43,8 @@
                                     <li>
                                         <center>
                                             <span>
-                                            <img src="../uploads/{{userData.profilepicture.data}}" alt="" height="80px" width="80px">
+                                                <img src="../uploads/{{userData.profilepicture.data}}" alt=""
+                                                    height="80px" width="80px">
                                         </center>
                                     </li>
                                     <li>
@@ -100,61 +101,62 @@
         </div>
         <div class="col" style="margin:auto;">
             <form action="/student/upload_photo" method="POST" enctype="multipart/form-data">
-            <table class="table table-striped">
-                <tbody>
-                    <tr>
-                        <td colspan="3" bgcolor="#E5E5E5" style="text-align: center">
-                            <b>
-                                <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                                UPLOAD PHOTO & SIGNATURE
-                            </b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-size: 10pt; font-family: Arial">Upload Photo : </span>
-                        </td>
-                        <td align="left">
-                            <input type="file" name="profilepicture" style="width:298px;">
-                        </td>
-                        <td>
-                            <img src="../uploads/{{userData.profilepicture.data}}" height="80px" width="80px">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-size: 10pt; font-family: Arial">Upload Signature : </span>
-                        </td>
-                        <td align="left">
-                            <input type="file" name="signature"
-                                id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
-                        </td>
-                        <td>
-                            <img src="../uploads/{{userData.signature.data}}" height="80px" width="80px">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            <span style="font-size: 9pt; font-family: Arial">upload your Passport Size Photograph with
-                                clear visibility of face and clear background (Max Size: 100 KB) &amp;
-                                <br>
-                                Signature with clear visibility (Max Size: 50 KB) in .jpg format only
-                                <br>
-                                Note: The Photo &amp; Signature you specify here will be used for all academic
-                                purpose.</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" align="center">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td colspan="3" bgcolor="#E5E5E5" style="text-align: center">
+                                <b>
+                                    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                    UPLOAD PHOTO & SIGNATURE
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt; font-family: Arial">Upload Photo : </span>
+                            </td>
+                            <td align="left">
+                                <input type="file" name="profilepicture" style="width:298px;">
+                            </td>
+                            <td>
+                                <img src="../uploads/{{userData.profilepicture.data}}" height="80px" width="80px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt; font-family: Arial">Upload Signature : </span>
+                            </td>
+                            <td align="left">
+                                <input type="file" name="signature" id="ctl00_ContentPlaceHolder1_FileUpload1"
+                                    style="width:298px;">
+                            </td>
+                            <td>
+                                <img src="../uploads/{{userData.signature.data}}" height="80px" width="80px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <span style="font-size: 9pt; font-family: Arial">upload your Passport Size Photograph
+                                    with
+                                    clear visibility of face and clear background (Max Size: 100 KB) &amp;
+                                    <br>
+                                    Signature with clear visibility (Max Size: 50 KB) in .jpg format only
+                                    <br>
+                                    Note: The Photo &amp; Signature you specify here will be used for all academic
+                                    purpose.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
 
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnContinue"
-                                value="Submit &amp; Continue >>" id="ctl00_ContentPlaceHolder1_btnContinue"
-                                class="BtnSubmit" style="width:250px;">
-                        </td>
-                         
-                    </tr>
-                </tbody>
-            </table>
+                                <input type="submit" name="ctl00$ContentPlaceHolder1$btnContinue"
+                                    value="Submit &amp; Continue >>" id="ctl00_ContentPlaceHolder1_btnContinue"
+                                    class="BtnSubmit" style="width:250px;">
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
             </form>
         </div>
     </div>
