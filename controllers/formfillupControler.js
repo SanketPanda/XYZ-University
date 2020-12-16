@@ -22,21 +22,27 @@ var upload = multer({
 });
 
 
-router.get('/instruction',async (req, res) => {
+router.get('/instruction', async (req, res) => {
     if (req.session.isAuth) {
+        const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
+        const user = await User.findOne({ email: req.session.currentUser }).exec();
         try {
-            const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
-            const user = await User.findOne({ email: req.session.currentUser }).exec();
             if (applicationForm != null) {
                 res.render('student/instruction', {
                     userData: applicationForm,
-                    user:user
+                    user: user
                 });
             } else if (applicationForm === null) {
-                res.render('student/instruction');
+                res.render('student/instruction', {
+                    userData: applicationForm,
+                    user: user
+                });
             }
         } catch (e) {
-            res.render('student/instruction');
+            res.render('student/instruction', {
+                userData: applicationForm,
+                user: user
+            });
         }
 
     } else {
@@ -47,20 +53,26 @@ router.get('/instruction',async (req, res) => {
 
 router.get('/upload_photo', async (req, res) => {
     if (req.session.isAuth) {
+        const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
+        const user = await User.findOne({ email: req.session.currentUser }).exec();
         try {
-            const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
-            const user = await User.findOne({ email: req.session.currentUser }).exec();
             if (applicationForm != null) {
                 res.render('student/upload_photo', {
                     userData: applicationForm,
-                    user:user
+                    user: user
                 });
             } else if (applicationForm === null) {
-                res.render('student/upload_photo');
+                res.render('student/upload_photo', {
+                    userData: applicationForm,
+                    user: user
+                });
             }
 
         } catch (e) {
-            res.render('student/upload_photo');
+            res.render('student/upload_photo', {
+                userData: applicationForm,
+                user: user
+            });
         }
     } else {
         res.redirect('/');
@@ -89,7 +101,7 @@ router.post('/upload_photo', cpUpload, async (req, res) => {
             await user.save();
             res.render('student/upload_doc', {
                 userData: applicationForm,
-                user:user
+                user: user
             });
         } else if (applicationForm === null) {
             const applicationForm = new userApplication();
@@ -97,7 +109,7 @@ router.post('/upload_photo', cpUpload, async (req, res) => {
             applicationForm.profilepicture.contentType = req.files['profilepicture'][0].mimetype;
             applicationForm.signature.data = req.files['signature'][0].filename;
             applicationForm.signature.contentType = req.files['signature'][0].mimetype;
-            
+
             var user = await User.findOne({ email: req.session.currentUser }).exec();
             applicationForm.user = user.email;
             await applicationForm.save();
@@ -105,7 +117,7 @@ router.post('/upload_photo', cpUpload, async (req, res) => {
             await user.save();
             res.render('student/upload_doc', {
                 userData: applicationForm,
-                user:user
+                user: user
             });
 
         }
@@ -119,19 +131,25 @@ router.post('/upload_photo', cpUpload, async (req, res) => {
 
 router.get('/upload_doc', async (req, res) => {
     if (req.session.isAuth) {
+        const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
+        const user = await User.findOne({ email: req.session.currentUser }).exec();
         try {
-            const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
-            const user = await User.findOne({ email: req.session.currentUser }).exec();
             if (applicationForm != null) {
                 res.render('student/upload_doc', {
                     userData: applicationForm,
-                    user:user
+                    user: user
                 });
-            } else if (applicationForm === null){
-                res.render('student/upload_doc');
+            } else if (applicationForm === null) {
+                res.render('student/upload_doc', {
+                    userData: applicationForm,
+                    user: user
+                });
             }
         } catch (e) {
-            res.render('student/upload_doc');
+            res.render('student/upload_doc', {
+                userData: applicationForm,
+                user: user
+            });
         }
     } else {
         res.redirect('/');
@@ -164,7 +182,7 @@ router.post('/upload_doc', cpUpload, async (req, res) => {
             await user.save();
             res.render('student/show_Print_Form', {
                 userData: applicationForm,
-                user:user
+                user: user
             });
         } else if (applicationForm === null) {
             const applicationForm = new userApplication();
@@ -190,7 +208,7 @@ router.post('/upload_doc', cpUpload, async (req, res) => {
             await user.save();
             res.render('student/show_Print_Form', {
                 userData: applicationForm,
-                user:user
+                user: user
             });
         }
 
@@ -201,19 +219,26 @@ router.post('/upload_doc', cpUpload, async (req, res) => {
 
 router.get('/show_Print_Form', async (req, res) => {
     if (req.session.isAuth) {
+        const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
+        const user = await User.findOne({ email: req.session.currentUser }).exec();
         try {
-            const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
-            const user = await User.findOne({ email: req.session.currentUser }).exec();
+
             if (applicationForm) {
                 res.render('student/show_Print_Form', {
                     userData: applicationForm,
                     user: user
                 });
             } else {
-                res.render('student/show_Print_Form');
+                res.render('student/show_Print_Form', {
+                    userData: applicationForm,
+                    user: user
+                });
             }
         } catch (e) {
-            res.render('student/show_Print_Form');
+            res.render('student/show_Print_Form', {
+                userData: applicationForm,
+                user: user
+            });
         }
     } else {
         res.redirect('/');
