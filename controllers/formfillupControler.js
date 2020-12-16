@@ -34,13 +34,11 @@ router.get('/instruction', async (req, res) => {
                 });
             } else if (applicationForm === null) {
                 res.render('student/instruction', {
-                    userData: applicationForm,
                     user: user
                 });
             }
         } catch (e) {
             res.render('student/instruction', {
-                userData: applicationForm,
                 user: user
             });
         }
