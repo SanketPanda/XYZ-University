@@ -7,6 +7,7 @@ const loginController = require('./studentLoginController');
 const multer = require('multer');
 const { compareSync } = require('bcrypt');
 const path = require('path')
+const fs = require('fs');
 var router = express.Router();
 
 var Storage = multer.diskStorage({
@@ -20,11 +21,35 @@ var upload = multer({
     storage: Storage
 });
 
-router.get('/instruction', (req, res) => {
+// var storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, './public/uploads/')
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.fieldname + '-' + Date.now())
+//     }
+//   })
+
+//   var upload = multer({ storage: storage })
+
+
+router.get('/instruction',async (req, res) => {
     if (req.session.isAuth) {
-        res.render('student/instruction', {
-            viewTitle: "Home Page"
-        });
+        try {
+            const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
+            const user = await User.findOne({ email: req.session.currentUser }).exec();
+            if (applicationForm != null) {
+                res.render('student/instruction', {
+                    userData: applicationForm,
+                    user:user
+                });
+            } else if (applicationForm === null) {
+                res.render('student/instruction');
+            }
+        } catch (e) {
+            res.render('student/instruction');
+        }
+
     } else {
         res.redirect('/');
     }
@@ -35,13 +60,16 @@ router.get('/upload_photo', async (req, res) => {
     if (req.session.isAuth) {
         try {
             const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
+            const user = await User.findOne({ email: req.session.currentUser }).exec();
             if (applicationForm != null) {
                 res.render('student/upload_photo', {
-                    userData: applicationForm
+                    userData: applicationForm,
+                    user:user
                 });
             } else if (applicationForm === null) {
                 res.render('student/upload_photo');
             }
+
         } catch (e) {
             res.render('student/upload_photo');
         }
@@ -50,6 +78,7 @@ router.get('/upload_photo', async (req, res) => {
     }
 });
 
+var urlEncodedParser = bodyParser.urlencoded({ extended: false });
 var cpUpload = upload.fields([{ name: 'profilepicture', maxCount: 1 },
 { name: 'signature', maxCount: 1 }, { name: 'tenthCertificate', maxCount: 1 },
 { name: 'twelfthCertificate', maxCount: 1 }, { name: 'graduationCertificate', maxCount: 1 },
@@ -57,31 +86,39 @@ var cpUpload = upload.fields([{ name: 'profilepicture', maxCount: 1 },
 
 router.post('/upload_photo', cpUpload, async (req, res) => {
     try {
+        // console.log(req.file);
         const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
         if (applicationForm != null) {
-            applicationForm.profilepicture = req.files['profilepicture'][0].filename;
-            applicationForm.signature = req.files['signature'][0].filename;
+            applicationForm.profilepicture.data = req.files['profilepicture'][0].filename;
+            applicationForm.profilepicture.contentType = req.files['profilepicture'][0].mimetype;
+            applicationForm.signature.data = req.files['signature'][0].filename;
+            applicationForm.signature.contentType = req.files['signature'][0].mimetype;
             await applicationForm.save();
+            console.log(applicationForm.profilepicture.data);
             var user = await User.findOne({ email: req.session.currentUser }).exec();
             user.applicationform = applicationForm.id;
             await user.save();
             res.render('student/upload_doc', {
-                userData: applicationForm
+                userData: applicationForm,
+                user:user
             });
         } else if (applicationForm === null) {
-            const applicationForm = new userApplication({
-                profilepicture: req.files['profilepicture'][0].filename,
-                signature: req.files['signature'][0].filename,
-            });
+            const applicationForm = new userApplication();
+            applicationForm.profilepicture.data = req.files['profilepicture'][0].filename;
+            applicationForm.profilepicture.contentType = req.files['profilepicture'][0].mimetype;
+            applicationForm.signature.data = req.files['signature'][0].filename;
+            applicationForm.signature.contentType = req.files['signature'][0].mimetype;
+            
             var user = await User.findOne({ email: req.session.currentUser }).exec();
             applicationForm.user = user.email;
             await applicationForm.save();
             user.applicationform = applicationForm.id;
             await user.save();
             res.render('student/upload_doc', {
-                userData: applicationForm
+                userData: applicationForm,
+                user:user
             });
-           
+
         }
     } catch (e) {
         res.send(e);
@@ -89,15 +126,19 @@ router.post('/upload_photo', cpUpload, async (req, res) => {
 });
 
 
+
+
 router.get('/upload_doc', async (req, res) => {
     if (req.session.isAuth) {
         try {
             const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
-            if (applicationForm) {
+            const user = await User.findOne({ email: req.session.currentUser }).exec();
+            if (applicationForm != null) {
                 res.render('student/upload_doc', {
-                    userData: applicationForm
+                    userData: applicationForm,
+                    user:user
                 });
-            } else {
+            } else if (applicationForm === null){
                 res.render('student/upload_doc');
             }
         } catch (e) {
@@ -112,34 +153,55 @@ router.post('/upload_doc', cpUpload, async (req, res) => {
     try {
         const applicationForm = await userApplication.findOne({ user: req.session.currentUser }).exec();
         if (applicationForm != null) {
-            applicationForm.tenthCertificate = req.files['tenthCertificate'][0].filename;
-            applicationForm.twelfthCertificate = req.files['twelfthCertificate'][0].filename;
-            applicationForm.graduationCertificate = req.files['graduationCertificate'][0].filename;
-            applicationForm.migration = req.files['migration'][0].filename;
-            applicationForm.adharCard = req.files['adharCard'][0].filename;
+            applicationForm.tenthCertificate.data = req.files['tenthCertificate'][0].filename;
+            applicationForm.tenthCertificate.contentType = req.files['tenthCertificate'][0].mimetype;
+
+            applicationForm.twelfthCertificate.data = req.files['twelfthCertificate'][0].filename;
+            applicationForm.twelfthCertificate.contentType = req.files['twelfthCertificate'][0].mimetype;
+
+            applicationForm.graduationCertificate.data = req.files['graduationCertificate'][0].filename;
+            applicationForm.graduationCertificate.contentType = req.files['graduationCertificate'][0].mimetype;
+
+            applicationForm.migration.data = req.files['migration'][0].filename;
+            applicationForm.migration.contentType = req.files['migration'][0].mimetype;
+
+            applicationForm.adharCard.data = req.files['adharCard'][0].filename;
+            applicationForm.adharCard.contentType = req.files['adharCard'][0].mimetype;
+
             applicationForm.user = req.session.currentUser;
             await applicationForm.save();
             var user = await User.findOne({ email: req.session.currentUser }).exec();
             user.applicationform = applicationForm.id;
             await user.save();
             res.render('student/show_Print_Form', {
-                userData: applicationForm
+                userData: applicationForm,
+                user:user
             });
         } else if (applicationForm === null) {
-            const applicationForm = new userApplication({
-                tenthCertificate: req.files['tenthCertificate'][0].filename,
-                twelfthCertificate: req.files['twelfthCertificate'][0].filename,
-                graduationCertificate: req.files['graduationCertificate'][0].filename,
-                migration: req.files['migration'][0].filename,
-                adharCard: req.files['adharCard'][0].filename
-            });
+            const applicationForm = new userApplication();
+            applicationForm.tenthCertificate.data = req.files['tenthCertificate'][0].filename;
+            applicationForm.tenthCertificate.contentType = req.files['tenthCertificate'][0].mimetype;
+
+            applicationForm.twelfthCertificate.data = req.files['twelfthCertificate'][0].filename;
+            applicationForm.twelfthCertificate.contentType = req.files['twelfthCertificate'][0].mimetype;
+
+            applicationForm.graduationCertificate.data = req.files['graduationCertificate'][0].filename;
+            applicationForm.graduationCertificate.contentType = req.files['graduationCertificate'][0].mimetype;
+
+            applicationForm.migration.data = req.files['migration'][0].filename;
+            applicationForm.migration.contentType = req.files['migration'][0].mimetype;
+
+            applicationForm.adharCard.data = req.files['adharCard'][0].filename;
+            applicationForm.adharCard.contentType = req.files['adharCard'][0].mimetype;
+
             applicationForm.user = req.session.currentUser;
             await applicationForm.save();
             var user = await User.findOne({ email: req.session.currentUser }).exec();
             user.applicationform = applicationForm.id;
             await user.save();
             res.render('student/show_Print_Form', {
-                userData: applicationForm
+                userData: applicationForm,
+                user:user
             });
         }
 
@@ -156,7 +218,7 @@ router.get('/show_Print_Form', async (req, res) => {
             if (applicationForm) {
                 res.render('student/show_Print_Form', {
                     userData: applicationForm,
-                    user:user
+                    user: user
                 });
             } else {
                 res.render('student/show_Print_Form');

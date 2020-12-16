@@ -42,7 +42,7 @@
                                 <ul class="leftnav">
                                     <li>
                                         <center>
-                                            <img src="../uploads/{{userData.profilepicture}}" alt="" height="80px"
+                                            <img src="../uploads/{{userData.profilepicture.data}}" alt="" height="80px"
                                                 width="80px">
                                         </center>
                                     </li>
@@ -51,11 +51,11 @@
                                             <span style="font-size:19px;">
                                                 <b>
                                                     <span>
-                                                        Name of Applicant
+                                                       {{user.applicantName}}
                                                     </span>
                                                     <br>
                                                     <span>
-                                                        Form No
+                                                        {{user.__v}}
                                                     </span>
                                                 </b>
                                             </span>
@@ -118,10 +118,10 @@
                         <td>{{user.__v}}</td>
                         <td>{{user.applicantName}}</td>
                         <td>
-                            <img src="../uploads/{{userData.profilepicture}}" style="height:40px;border-width:0px;">
+                            <img src="../uploads/{{userData.profilepicture.data}}" style="height:40px;border-width:0px;">
                         </td>
                         <td>
-                            <img src="../uploads/{{userData.signature}}"
+                            <img src="../uploads/{{userData.signature.data}}"
                                 style="height:40px;width:120px;border-width:0px;">
                         </td>
                         <td>{{user.courses}}</td>
@@ -144,7 +144,7 @@
                                 1.
                                 <b>
                                     <i class="fa fa-file-pdf"></i>
-                                    <a href="../uploads/{{userData.tenthCertificate}}" target="_blank"> 10th
+                                    <a href="../uploads/{{userData.tenthCertificate.data}}" target="_blank"> 10th
                                         Certificate</a>
                                 </b>
                             </td>
@@ -154,7 +154,7 @@
                                 2.
                                 <b>
                                     <i class="fa fa-file-pdf"></i>
-                                    <a href="../uploads/{{userData.twelfthCertificate}}" target="_blank"> +2
+                                    <a href="../uploads/{{userData.twelfthCertificate.data}}" target="_blank"> +2
                                         Certificate</a>
                                 </b>
                             </td>
@@ -164,7 +164,7 @@
                                 3.
                                 <b>
                                     <i class="fa fa-file-pdf"></i>
-                                    <a href="../uploads/{{userData.graduationCertificate}}" target="_blank"> Graduation
+                                    <a href="../uploads/{{userData.graduationCertificate.data}}" target="_blank"> Graduation
                                         Certificate</a>
                                 </b>
                             </td>
@@ -174,7 +174,7 @@
                                 4.
                                 <b>
                                     <i class="fa fa-file-pdf"></i>
-                                    <a href="../uploads/{{userData.migration}}" target="_blank"> Migration</a>
+                                    <a href="../uploads/{{userData.migration.data}}" target="_blank"> Migration</a>
                                 </b>
                             </td>
                         </tr>
@@ -183,7 +183,7 @@
                                 4.
                                 <b>
                                     <i class="fa fa-file-pdf"></i>
-                                    <a href="../uploads/{{userData.adharCard}}" target="_blank"> Identity
+                                    <a href="../uploads/{{userData.adharCard.data}}" target="_blank"> Identity
                                         Proof</a>
                                 </b>
                             </td>

@@ -42,7 +42,7 @@
                                 <ul class="leftnav">
                                     <li>
                                         <center>
-                                            <img src="../uploads/{{userData.profilepicture}}" alt="" height="80px" width="80px" alt="profile picture">
+                                            <img src="../uploads/{{userData.profilepicture.data}}" alt="" height="80px" width="80px" alt="profile picture">
                                         </center>
                                     </li>
                                     <li>
@@ -50,11 +50,11 @@
                                             <span style="font-size:19px;">
                                                 <b>
                                                     <span>
-                                                        Name of Applicant
+                                                       {{user.applicantName}}
                                                     </span>
                                                     <br>
                                                     <span>
-                                                        Form No
+                                                        {{user.__v}}
                                                     </span>
                                                 </b>
                                             </span>
@@ -119,7 +119,7 @@
                                     id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
                             </td> 
                             <td>
-                               <img src="../uploads/{{userData.tenthCertificate}}" height="80px" width="80px">
+                               <img src="../uploads/{{userData.tenthCertificate.data}}" height="80px" width="80px">
                             </td>
                         </tr>
                         <tr>
@@ -132,7 +132,7 @@
                                     id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
                             </td>
                             <td>
-                                   <img src="../uploads/{{userData.twelfthCertificate}}" height="80px" width="80px">
+                                   <img src="../uploads/{{userData.twelfthCertificate.data}}" height="80px" width="80px">
                             </td>
                         </tr>
                         <tr>
@@ -146,7 +146,7 @@
                                     id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
                             </td>  
                             <td>
-                                  <img src="../uploads/{{userData.graduationCertificate}}" height="80px" width="80px">
+                                  <img src="../uploads/{{userData.graduationCertificate.data}}" height="80px" width="80px">
                             </td>
                         </tr>
                         <tr>
@@ -158,7 +158,7 @@
                                     id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
                             </td>
                             <td>
-                                   <img src="../uploads/{{userData.migration}}" height="80px" width="80px">
+                                   <img src="../uploads/{{userData.migration.data}}" height="80px" width="80px">
                             </td>
                         </tr>
                         <tr>
@@ -170,7 +170,7 @@
                                     id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
                             </td>
                             <td>
-                                 <img src="../uploads/{{userData.adharCard}}" height="80px" width="80px">
+                                 <img src="../uploads/{{userData.adharCard.data}}" height="80px" width="80px">
                             </td>
                         </tr>
                         <tr>

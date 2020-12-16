@@ -42,7 +42,8 @@
                                 <ul class="leftnav">
                                     <li>
                                         <center>
-                                            <img src="../uploads/{{userData.profilepicture}}" alt="" height="80px" width="80px">
+                                            <span>
+                                            <img src="../uploads/{{userData.profilepicture.data}}" alt="" height="80px" width="80px">
                                         </center>
                                     </li>
                                     <li>
@@ -50,11 +51,11 @@
                                             <span style="font-size:19px;">
                                                 <b>
                                                     <span>
-                                                        Name of Applicant
+                                                        {{user.applicantName}}
                                                     </span>
                                                     <br>
                                                     <span>
-                                                        Form No
+                                                        {{user.__v}}
                                                     </span>
                                                 </b>
                                             </span>
@@ -114,11 +115,10 @@
                             <span style="font-size: 10pt; font-family: Arial">Upload Photo : </span>
                         </td>
                         <td align="left">
-                            <input type="file" name="profilepicture"
-                                id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
+                            <input type="file" name="profilepicture" style="width:298px;">
                         </td>
                         <td>
-                            <img src="../uploads/{{userData.profilepicture}}" height="80px" width="80px">
+                            <img src="../uploads/{{userData.profilepicture.data}}" height="80px" width="80px">
                         </td>
                     </tr>
                     <tr>
@@ -130,7 +130,7 @@
                                 id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
                         </td>
                         <td>
-                            <img src="../uploads/{{userData.signature}}" height="80px" width="80px">
+                            <img src="../uploads/{{userData.signature.data}}" height="80px" width="80px">
                         </td>
                     </tr>
                     <tr>

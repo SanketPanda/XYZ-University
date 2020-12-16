@@ -4,29 +4,37 @@ const bcrypt = require('bcrypt');
 
 var studentformSchema = mongoose.Schema({
     profilepicture:{
-        type:String
+        data:Buffer,
+        contentType:String
     },
     signature:{
-        type:String
+        data:Buffer,
+        contentType:String
     },
     user:{
         type:Schema.Types.String,
-        ref:'NewStudent'
+        ref:'NewStudent',
+        Image:Buffer
     },
     tenthCertificate:{
-        type:String
+        data:Buffer,
+        contentType:String
     },
     twelfthCertificate:{
-        type:String
+        data:Buffer,
+        contentType:String
     },
     graduationCertificate:{
-        type:String
+        data:Buffer,
+        contentType:String
     },
     migration:{
-        type:String
+        data:Buffer,
+        contentType:String
     },
     adharCard:{
-        type:String
+        data:Buffer,
+        contentType:String
     }
 });
 

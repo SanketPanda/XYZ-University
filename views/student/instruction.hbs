@@ -42,7 +42,7 @@
                                 <ul class="leftnav">
                                     <li>
                                         <center>
-                                            <img src="../uploads/{{userData.profilepicture}}" alt="" height="80px" width="80px">
+                                            <img src="../uploads/{{userData.profilepicture.data}}" alt="" height="80px" width="80px">
                                         </center>
                                     </li>
                                     <li>
@@ -50,11 +50,11 @@
                                             <span style="font-size:19px;">
                                                 <b>
                                                     <span>
-                                                        Name of Applicant
+                                                       {{user.applicantName}}
                                                     </span>
                                                     <br>
                                                     <span>
-                                                        Form No
+                                                        {{user.__v}}
                                                     </span>
                                                 </b>
                                             </span>
