@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
             });
         } else {
             req.session.isAuth = true;
-            req.session.currentUser = req.body.email;
+            req.session.currentUser = req.body.email.toLowerCase();
             res.redirect('student/instruction');
         }
 

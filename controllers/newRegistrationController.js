@@ -91,7 +91,7 @@ router.post('/', urlEncodedParser, [
             } else {
                 let student = new newStudentRegistrationModel({
                     applicantName: req.body.applicantName,
-                    email: req.body.email,
+                    email: req.body.email.toLowerCase(),
                     dob: req.body.dob,
                     mobile: req.body.mobile,
                     courses: req.body.courses,
