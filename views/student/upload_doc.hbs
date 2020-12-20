@@ -72,8 +72,8 @@
                                         </center>
                                     </li>
                                     <li class="leftnavli">
-                                        <a class="active" href="/student/instruction">
-                                            <i class="fa fa-dashboard" style="font-size:25px;"></i>
+                                        <a href="/student/instruction">
+                                            <i class="fas fa-tachometer-alt" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp;Dashboard
                                         </a>
                                     </li>
@@ -84,7 +84,7 @@
                                         </a>
                                     </li>
                                     <li class="leftnavli">
-                                        <a href="/student/upload_doc">
+                                        <a class="active" href="/student/upload_doc">
                                             <i class="fa fa-file-pdf" style="font-size:25px;"></i>
                                             &nbsp;&nbsp;&nbsp; Upload Documents
                                         </a>
@@ -130,7 +130,7 @@
                                     id="ctl00_ContentPlaceHolder1_FileUpload1" required="" style="width:298px;">
                             </td> 
                             <td>
-                               <img src="../uploads/{{userData.tenthCertificate.data}}" height="80px" width="80px">
+                               <a href="../uploads/{{userData.tenthCertificate.data}}" class="btn btn-info">View</a>
                             </td>
                         </tr>
                         <tr>
@@ -143,7 +143,7 @@
                                     id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
                             </td>
                             <td>
-                                   <img src="../uploads/{{userData.twelfthCertificate.data}}" height="80px" width="80px">
+                                   <a src="../uploads/{{userData.twelfthCertificate.data}}" class="btn btn-info">View</a>
                             </td>
                         </tr>
                         <tr>
@@ -157,7 +157,7 @@
                                     id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
                             </td>  
                             <td>
-                                  <img src="../uploads/{{userData.graduationCertificate.data}}" height="80px" width="80px">
+                                  <a src="../uploads/{{userData.graduationCertificate.data}}" class="btn btn-info">View</a>
                             </td>
                         </tr>
                         <tr>
@@ -169,7 +169,7 @@
                                     id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
                             </td>
                             <td>
-                                   <img src="../uploads/{{userData.migration.data}}" height="80px" width="80px">
+                                   <a src="../uploads/{{userData.migration.data}}" class="btn btn-info">View</a>
                             </td>
                         </tr>
                         <tr>
@@ -181,7 +181,7 @@
                                     id="ctl00_ContentPlaceHolder1_FileUpload1" style="width:298px;">
                             </td>
                             <td>
-                                 <img src="../uploads/{{userData.adharCard.data}}" height="80px" width="80px">
+                                 <a src="../uploads/{{userData.adharCard.data}}" class="btn btn-info">View</a>
                             </td>
                         </tr>
                         <tr>
